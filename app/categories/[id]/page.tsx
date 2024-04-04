@@ -1,5 +1,3 @@
-import { db } from "@/app/_lib/prisma";
-import { Barbershop } from "@prisma/client";
 import CategoriesInfo from "./_components/categories-info";
 
 interface CategoryDetails {

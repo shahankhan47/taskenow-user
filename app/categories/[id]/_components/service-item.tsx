@@ -1,7 +1,6 @@
 "use client";
 import { Button } from "@/app/_components/ui/button";
 import { Card, CardContent } from "@/app/_components/ui/card";
-import { Barbershop, Booking, Service } from "@prisma/client";
 import Image from "next/image";
 
 import {
@@ -27,8 +26,8 @@ import { useRouter } from "next/navigation";
 import { getDayBookings } from "../_actions/get-day-bookings";
 
 interface ServiceItemProps {
-  barbershop: Barbershop;
-  service: Service;
+  barbershop: any;
+  service: any;
   isAuthenticated: boolean;
 }
 
@@ -43,7 +42,7 @@ const ServiceItem = ({
   const [hour, setHour] = useState<string | undefined>();
   const [submitIsLoading, setSubmitIsLoading] = useState(false);
   const [sheetIsOpen, setSheetIsOpen] = useState(false);
-  const [dayBookings, setDayBookings] = useState<Booking[]>([]);
+  const [dayBookings, setDayBookings] = useState<any[]>([]);
 
   useEffect(() => {
     if (!date) {

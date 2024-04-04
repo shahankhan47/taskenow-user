@@ -14,7 +14,6 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/app/_components/ui/tabs";
-import { Service } from "@prisma/client";
 import { useRouter } from "next/navigation";
 import ServiceItem from "./service-item";
 import { HiMiniWrenchScrewdriver, HiScissors } from "react-icons/hi2";
@@ -106,7 +105,7 @@ const CategoriesInfo = ({ Category }: any) => {
               </TabsList>
               <TabsContent value="services" className="w-full">
                 <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-                  {Category.services.map((service: Service) => (
+                  {Category.services.map((service: any) => (
                     <ServiceItem
                       key={service.id}
                       service={service}
@@ -220,7 +219,7 @@ const CategoriesInfo = ({ Category }: any) => {
         </div>
 
         <div className="mb-5 grid-cols-1 gap-5 px-5 md:grid-cols-2 lg:grid xl:grid-cols-3">
-          {Category.services.map((service: Service) => (
+          {Category.services.map((service: any) => (
             <ServiceItem
               key={service.id}
               service={service}
